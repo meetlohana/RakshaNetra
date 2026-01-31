@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RakshaNetra | Dashboard</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#0dccf2",
+        bg: "#101f22",
+        surface: "#111718",
+        borderc: "#283639",
+      }
+    }
+  }
+};
+</script>
+
+<style>
+body { font-family: "Space Grotesk", sans-serif; }
+.sidebar-hidden { transform: translateX(-100%); }
+</style>
+</head>
+
+<body class="bg-bg text-white">
+
+<!-- SIDEBAR -->
+<aside id="sidebar"
+  class="fixed left-0 top-0 w-64 h-screen bg-surface border-r border-borderc p-4 transition-transform duration-300">
+  <h1 class="text-2xl font-black text-primary mb-8">RakshaNetra 🛡</h1>
+
+  <nav class="flex flex-col gap-2 text-slate-300">
+    <a href="dashboard.html" class="px-4 py-2 rounded bg-primary/10 text-primary">Dashboard</a>
+    <a href="pages/vulnerability.html" class="px-4 py-2 hover:text-primary">Vulnerability</a>
+    <a href="pages/phishing.html" class="px-4 py-2 hover:text-primary">Phishing</a>
+    <a href="pages/url-checker.html" class="px-4 py-2 hover:text-primary">URL Checker</a>
+    <a href="pages/password.html" class="px-4 py-2 hover:text-primary">Password</a>
+    <a href="pages/report-scam.html" class="px-4 py-2 hover:text-primary">Report Scam</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="ml-64 transition-all duration-300" id="main">
+
+<!-- TOP BAR -->
+<header class="flex justify-between items-center px-6 py-4 border-b border-borderc">
+
+  <!-- Sidebar Toggle -->
+  <button onclick="toggleSidebar()" class="text-xl">
+    ☰
+  </button>
+
+  <h2 class="text-xl font-bold">Security Dashboard</h2>
+
+  <!-- Right Icons -->
+  <div class="relative">
+    <button onclick="toggleNotify()" class="relative">
+      <span class="material-symbols-outlined">notifications</span>
+      <span class="absolute -top-1 -right-1 bg-red-500 text-xs px-1 rounded-full">3</span>
+    </button>
+
+    <!-- Notification Dropdown -->
+    <div id="notifyBox"
+      class="hidden absolute right-0 mt-3 w-64 bg-surface border border-borderc rounded-lg p-4 text-sm">
+      <p class="font-bold mb-2">Notifications</p>
+      <ul class="space-y-2 text-slate-300">
+        <li>🔔 Phishing detected</li>
+        <li>🛡 Vulnerability scan completed</li>
+        <li>🚨 Scam reported</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<section class="p-8 space-y-10">
+
+  <div>
+    <h1 class="text-3xl font-black">Welcome Back 👋</h1>
+    <p class="text-slate-400">Live security overview of your system</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+    <div class="bg-surface p-6 rounded-xl border border-borderc">
+      <p class="text-xs text-slate-400">TOTAL SCANS</p>
+      <p id="totalScans" class="text-3xl font-bold text-primary">--</p>
+    </div>
+    <div class="bg-surface p-6 rounded-xl border border-borderc">
+      <p class="text-xs text-slate-400">THREATS FOUND</p>
+      <p id="threatsFound" class="text-3xl font-bold text-red-400">--</p>
+    </div>
+    <div class="bg-surface p-6 rounded-xl border border-borderc">
+      <p class="text-xs text-slate-400">RISK LEVEL</p>
+      <p id="riskLevel" class="text-3xl font-bold text-green-400">--</p>
+    </div>
+    <div class="bg-surface p-6 rounded-xl border border-borderc">
+      <p class="text-xs text-slate-400">SECURITY SCORE</p>
+      <p id="securityScore" class="text-3xl font-bold">--%</p>
+    </div>
+  </div>
+  <!-- SECURITY FEATURES -->
+<section class="mt-14">
+
+  <h3 class="text-2xl font-bold mb-6">
+    Security Features 🛡
+  </h3>
+
+  <!-- Big Feature Box -->
+  <div class="bg-surface border border-borderc rounded-2xl p-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Vulnerability -->
+      <div onclick="location.href='pages/vulnerability.html'"
+        class="cursor-pointer p-6 rounded-xl border border-borderc hover:border-primary transition hover:scale-[1.02]">
+        <h4 class="text-lg font-bold mb-2">🛡 Vulnerability Scanner</h4>
+        <p class="text-slate-400 text-sm">
+          Scan websites for missing security headers and weaknesses.
+        </p>
+      </div>
+
+      <!-- Phishing -->
+      <div onclick="location.href='pages/phishing.html'"
+        class="cursor-pointer p-6 rounded-xl border border-borderc hover:border-primary transition hover:scale-[1.02]">
+        <h4 class="text-lg font-bold mb-2">🎣 Phishing Detection</h4>
+        <p class="text-slate-400 text-sm">
+          Detect malicious emails, SMS, and suspicious messages.
+        </p>
+      </div>
+
+      <!-- URL Checker -->
+      <div onclick="location.href='pages/url-checker.html'"
+        class="cursor-pointer p-6 rounded-xl border border-borderc hover:border-primary transition hover:scale-[1.02]">
+        <h4 class="text-lg font-bold mb-2">🌐 URL Safety Checker</h4>
+        <p class="text-slate-400 text-sm">
+          Check website trust score and phishing indicators.
+        </p>
+      </div>
+
+      <!-- Password -->
+      <div onclick="location.href='pages/password.html'"
+        class="cursor-pointer p-6 rounded-xl border border-borderc hover:border-primary transition hover:scale-[1.02]">
+        <h4 class="text-lg font-bold mb-2">🔑 Password Analyzer</h4>
+        <p class="text-slate-400 text-sm">
+          Measure password strength, entropy, and crack resistance.
+        </p>
+      </div>
+
+      <!-- Awareness -->
+      <div onclick="location.href='pages/awareness.html'"
+        class="cursor-pointer p-6 rounded-xl border border-borderc hover:border-primary transition hover:scale-[1.02]">
+        <h4 class="text-lg font-bold mb-2">📘 Cyber Awareness</h4>
+        <p class="text-slate-400 text-sm">
+          Learn common cyber scams and prevention techniques.
+        </p>
+      </div>
+
+      <!-- Report Scam -->
+      <div onclick="location.href='pages/report-scam.html'"
+        class="cursor-pointer p-6 rounded-xl border border-borderc hover:border-primary transition hover:scale-[1.02]">
+        <h4 class="text-lg font-bold mb-2">🚨 Report a Scam</h4>
+        <p class="text-slate-400 text-sm">
+          Report phishing, fraud, or suspicious cyber activities.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+</section>
+
+</main>
+
+<script>
+/* Sidebar toggle */
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  const main = document.getElementById("main");
+  sidebar.classList.toggle("sidebar-hidden");
+  main.classList.toggle("ml-64");
+}
+
+/* Notification toggle */
+function toggleNotify() {
+  document.getElementById("notifyBox").classList.toggle("hidden");
+}
+
+/* Load dashboard stats */
+async function loadDashboard() {
+  const res = await fetch("http://127.0.0.1:5000/api/dashboard-stats");
+  const data = await res.json();
+
+  document.getElementById("totalScans").innerText = data.total_scans;
+  document.getElementById("threatsFound").innerText = data.threats_found;
+  document.getElementById("riskLevel").innerText = data.risk_level;
+  document.getElementById("securityScore").innerText = data.security_score;
+}
+
+loadDashboard();
+</script>
+<script>
+loadDashboard();               // first load
+setInterval(loadDashboard, 5000);  // auto refresh every 5 sec
+</script>
+
+</body>
+</html>

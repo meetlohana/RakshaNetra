@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "How Phishing Attacks Work",
+    "category": "Phishing",
+    "level": "Beginner",
+    "content": "Phishing attacks trick users into revealing sensitive information by pretending to be trusted entities through email, SMS, or fake websites."
+  },
+  {
+    "id": 2,
+    "title": "Strong Password Practices",
+    "category": "Password Security",
+    "level": "Beginner",
+    "content": "Always use long passwords with a mix of letters, numbers, and symbols. Avoid reusing passwords across platforms."
+  },
+  {
+    "id": 3,
+    "title": "How Ransomware Spreads",
+    "category": "Ransomware",
+    "level": "Intermediate",
+    "content": "Ransomware often spreads through malicious attachments, fake software updates, and unsecured remote access."
+  }
+]

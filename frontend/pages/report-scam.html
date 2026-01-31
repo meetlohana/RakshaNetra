@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>RakshaNetra | Report a Scam</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0dccf2",
+            bg: "#101f22",
+            surface: "#111718",
+            borderc: "#283639",
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { font-family: "Space Grotesk", sans-serif; }
+    .cat-btn { border: 1px solid #283639; border-radius: 0.5rem; padding: 0.75rem; }
+  </style>
+</head>
+
+<body class="bg-bg text-white">
+
+<main class="ml-64 p-10 max-w-4xl mx-auto space-y-10">
+
+  <div class="text-center">
+    <h1 class="text-4xl font-black mb-3">Report a Scam</h1>
+    <p class="text-slate-400">Your report helps protect others.</p>
+  </div>
+
+  <div class="bg-surface border border-borderc rounded-xl p-8 space-y-6">
+
+    <!-- CATEGORY -->
+    <div>
+      <p class="mb-3 text-sm font-semibold">Scam Category</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <button class="cat-btn">Phishing</button>
+        <button class="cat-btn">Payment Fraud</button>
+        <button class="cat-btn">Social Media</button>
+        <button class="cat-btn">Ransomware</button>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div>
+      <p class="mb-2 text-sm font-semibold">What happened?</p>
+      <textarea id="description"
+        rows="4"
+        class="w-full bg-bg border border-borderc rounded-lg p-3 outline-none focus:border-primary"
+        placeholder="Describe the scam..."></textarea>
+    </div>
+
+    <!-- DATE & PLATFORM -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input id="date" type="date"
+        class="bg-bg border border-borderc rounded-lg p-3" />
+      <input id="platform" type="text"
+        placeholder="WhatsApp, Email, Instagram"
+        class="bg-bg border border-borderc rounded-lg p-3" />
+    </div>
+
+    <!-- SUBMIT -->
+    <button onclick="submitScam()"
+      class="w-full bg-primary text-black font-bold py-3 rounded-lg">
+      Submit Report
+    </button>
+
+    <div id="result" class="hidden p-4 rounded text-sm"></div>
+
+  </div>
+
+</main>
+
+<script>
+let selectedCategory = "";
+
+/* CATEGORY BUTTON LOGIC */
+document.querySelectorAll(".cat-btn").forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll(".cat-btn").forEach(b => {
+      b.classList.remove("border-primary", "text-primary");
+    });
+    btn.classList.add("border-primary", "text-primary");
+    selectedCategory = btn.innerText;
+  };
+});
+
+/* SUBMIT FUNCTION */
+async function submitScam() {
+  const description = document.getElementById("description").value.trim();
+  const date = document.getElementById("date").value;
+  const platform = document.getElementById("platform").value.trim();
+  const result = document.getElementById("result");
+
+  if (!selectedCategory || !description || !date || !platform) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  result.classList.remove("hidden");
+  result.className = "p-4 rounded bg-slate-800";
+  result.innerHTML = "Submitting report...";
+
+  try {
+    const response = await fetch(
+      "http://127.0.0.1:5000/api/report-scam",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          category: selectedCategory,
+          description,
+          platform,
+          date
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.status === "SUCCESS") {
+      result.className = "p-4 rounded bg-green-600 text-white";
+      result.innerHTML = `✅ Report Submitted<br>Reference ID: <b>${data.reference}</b>`;
+    } else {
+      throw new Error();
+    }
+  } catch {
+    result.className = "p-4 rounded bg-red-600 text-white";
+    result.innerHTML = "❌ Failed to submit report";
+  }
+}
+</script>
+
+</body>
+</html>

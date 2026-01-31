@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RakshaNetra | Cyber Awareness Hub</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0dccf2",
+            bgDark: "#101f22",
+            surface: "#111718",
+            borderDark: "#283639",
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: "Space Grotesk", sans-serif; }
+  </style>
+</head>
+
+<body class="bg-bgDark text-white font-display">
+
+<!-- SIDEBAR -->
+<aside class="fixed w-64 h-screen bg-surface border-r border-borderDark">
+  <div class="p-6 text-primary text-xl font-bold">RakshaNetra</div>
+  <nav class="flex flex-col gap-2 px-4 text-slate-300">
+    <a href="../dashboard.html">Dashboard</a>
+    <a href="vulnerability.html">Vulnerability Scanner</a>
+    <a href="phishing.html">Phishing Detection</a>
+    <a href="url-checker.html">URL Safety Checker</a>
+    <a href="password.html">Password Analyzer</a>
+    <a href="awareness.html" class="bg-primary/10 text-primary px-3 py-2 rounded-lg">Cyber Awareness</a>
+    <a href="report-scam.html">Report Scam</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="ml-64 p-10 space-y-16">
+
+  <!-- Header -->
+  <section class="max-w-5xl">
+    <h1 class="text-5xl font-black mb-4">Cyber Awareness Hub</h1>
+    <p class="text-slate-400 text-lg max-w-3xl">
+      Learn how cyber scams work and how students & small businesses can stay protected.
+    </p>
+  </section>
+
+  <!-- Featured Guides -->
+  <section class="space-y-6">
+    <h2 class="text-2xl font-bold flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">auto_awesome</span>
+      Featured Security Guides
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="bg-surface border border-borderDark rounded-xl p-5">
+        <h3 class="font-bold text-lg">Phishing Anatomy</h3>
+        <p class="text-sm text-slate-400 mt-2">
+          Understand fake links, spoofed senders, and urgency tricks.
+        </p>
+      </div>
+
+      <div class="bg-surface border border-borderDark rounded-xl p-5">
+        <h3 class="font-bold text-lg">Deepfake Defense</h3>
+        <p class="text-sm text-slate-400 mt-2">
+          Spot AI-generated voices and manipulated videos.
+        </p>
+      </div>
+
+      <div class="bg-surface border border-borderDark rounded-xl p-5">
+        <h3 class="font-bold text-lg">Network Safety</h3>
+        <p class="text-sm text-slate-400 mt-2">
+          Secure Wi-Fi routers and office networks.
+        </p>
+      </div>
+
+      <div class="bg-surface border border-borderDark rounded-xl p-5">
+        <h3 class="font-bold text-lg">Mobile Security</h3>
+        <p class="text-sm text-slate-400 mt-2">
+          Protect your phone from malicious apps and links.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scam Encyclopedia -->
+  <section class="space-y-6 max-w-6xl">
+    <h2 class="text-3xl font-bold">Scam Encyclopedia</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="bg-surface border border-borderDark rounded-xl p-6">
+        <h3 class="text-xl font-bold">Smishing</h3>
+        <p class="text-sm text-slate-400 mt-2">
+          Fraud through deceptive SMS messages.
+        </p>
+      </div>
+
+      <div class="bg-surface border border-borderDark rounded-xl p-6">
+        <h3 class="text-xl font-bold">Vishing</h3>
+        <p class="text-sm text-slate-400 mt-2">
+          Phone calls pretending to be banks or officials.
+        </p>
+      </div>
+
+      <div class="bg-surface border border-borderDark rounded-xl p-6">
+        <h3 class="text-xl font-bold">Ransomware</h3>
+        <p class="text-sm text-slate-400 mt-2">
+          Malware that locks files and demands payment.
+        </p>
+      </div>
+
+      <div class="bg-surface border border-borderDark rounded-xl p-6">
+        <h3 class="text-xl font-bold">Whaling</h3>
+        <p class="text-sm text-slate-400 mt-2">
+          Targeted attacks against executives and admins.
+        </p>
+      </div>
+
+      <div class="bg-surface border border-borderDark rounded-xl p-6">
+        <h3 class="text-xl font-bold">Social Engineering</h3>
+        <p class="text-sm text-slate-400 mt-2">
+          Psychological manipulation to steal information.
+        </p>
+      </div>
+
+      <div class="bg-surface border border-borderDark rounded-xl p-6">
+        <h3 class="text-xl font-bold">Baiting</h3>
+        <p class="text-sm text-slate-400 mt-2">
+          Fake rewards used to spread malware.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Do’s & Don’ts -->
+  <section class="bg-surface border border-borderDark rounded-xl p-10 max-w-6xl">
+    <h2 class="text-3xl font-black mb-8">Phishing Do’s & Don’ts</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+      <div>
+        <h3 class="text-xl font-bold text-green-400 mb-4">Do’s</h3>
+        <ul class="space-y-2 text-slate-300 text-sm">
+          <li>✔ Verify sender email carefully</li>
+          <li>✔ Hover over links before clicking</li>
+          <li>✔ Report suspicious messages</li>
+          <li>✔ Enable MFA everywhere</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-red-400 mb-4">Don’ts</h3>
+        <ul class="space-y-2 text-slate-300 text-sm">
+          <li>✖ Don’t click unknown links</li>
+          <li>✖ Don’t trust urgency messages</li>
+          <li>✖ Don’t share OTPs or passwords</li>
+          <li>✖ Don’t ignore browser warnings</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-slate-400 text-sm border-t border-borderDark pt-10">
+    © 2024 RakshaNetra Cyber Awareness Initiative
+  </footer>
+  <div id="awarenessContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+
+
+</main>
+<script>
+async function loadAwareness() {
+  const res = await fetch("http://127.0.0.1:5000/api/awareness");
+  const data = await res.json();
+
+  const container = document.getElementById("awarenessContainer");
+  container.innerHTML = "";
+
+  data.forEach(item => {
+    container.innerHTML += `
+      <div class="bg-[#111718] border border-[#283639] rounded-xl p-6">
+        <h3 class="text-xl font-bold mb-2">${item.title}</h3>
+        <p class="text-sm text-slate-400 mb-2">
+          Category: ${item.category} • Level: ${item.level}
+        </p>
+        <p class="text-slate-300 text-sm">${item.content}</p>
+      </div>
+    `;
+  });
+}
+
+loadAwareness();
+</script>
+
+
+</body>
+</html>

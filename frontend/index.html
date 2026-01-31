@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RakshaNetra | Your Digital Shield</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0dccf2",
+            "background-dark": "#0a0f1a",
+            "surface-dark": "#111718",
+            "border-dark": "#283639",
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .glow-cyan { box-shadow: 0 0 15px rgba(13, 204, 242, 0.3); }
+    .glow-cyan-hover:hover { box-shadow: 0 0 25px rgba(13, 204, 242, 0.5); }
+    .hero-gradient {
+      background: radial-gradient(circle at 50% 50%, #101f22 0%, #0a0f1a 100%);
+    }
+  </style>
+</head>
+
+<body class="bg-background-dark text-white font-display">
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-50 border-b border-border-dark bg-background-dark/80 backdrop-blur-md px-6 lg:px-40 py-4">
+  <div class="max-w-[1200px] mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-3 text-primary">
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 48 48">
+        <path d="M24 4H42V30H24V44H6V17H24V4Z"/>
+      </svg>
+      <span class="font-bold text-xl">RakshaNetra</span>
+    </div>
+
+    <nav class="hidden md:flex gap-8 text-sm">
+      <a href="#features" class="text-white/70 hover:text-primary">Features</a>
+      <a href="#how" class="text-white/70 hover:text-primary">How It Works</a>
+      <a href="#contact" class="text-white/70 hover:text-primary">Contact</a>
+    </nav>
+
+    <div class="flex gap-3">
+      <button onclick="location.href='dashboard.html'"
+        class="px-5 h-10 bg-primary text-background-dark font-bold rounded-lg glow-cyan hover:scale-105 transition">
+        Get Started
+      </button>
+      <button
+        class="px-5 h-10 border border-border-dark rounded-lg hover:border-primary transition">
+        Login
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero-gradient pt-20 pb-28 px-6 lg:px-40">
+  <div class="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+        Enterprise Grade Security
+      </span>
+      <h1 class="text-5xl font-black mt-6 leading-tight">
+        Your Digital Shield Against <span class="text-primary">Cyber Threats</span>
+      </h1>
+      <p class="text-white/70 mt-6 max-w-lg">
+        AI-powered cybersecurity protection for students and small businesses.
+      </p>
+      <div class="mt-8 flex gap-4">
+        <button onclick="location.href='dashboard.html'"
+          class="px-6 py-4 bg-primary text-background-dark font-bold rounded-lg glow-cyan">
+          Scan Now
+        </button>
+        <button onclick="location.href='pages/url-checker.html'"
+          class="px-6 py-4 border border-border-dark rounded-lg hover:border-primary">
+          Check URL
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="py-24 px-6 lg:px-40">
+  <div class="max-w-[1200px] mx-auto">
+    <h2 class="text-4xl font-black mb-12">Advanced Protection Features</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-8 bg-surface-dark border border-border-dark rounded-xl glow-cyan-hover">
+        <h3 class="text-xl font-bold">Vulnerability Scanner</h3>
+        <p class="text-slate-400 mt-2">Find system weaknesses automatically.</p>
+      </div>
+      <div class="p-8 bg-surface-dark border border-border-dark rounded-xl glow-cyan-hover">
+        <h3 class="text-xl font-bold">Phishing Detection</h3>
+        <p class="text-slate-400 mt-2">Detect malicious emails & links.</p>
+      </div>
+      <div class="p-8 bg-surface-dark border border-border-dark rounded-xl glow-cyan-hover">
+        <h3 class="text-xl font-bold">URL Safety Checker</h3>
+        <p class="text-slate-400 mt-2">Check website trust & reputation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="py-24 px-6 lg:px-40 border-t border-border-dark">
+  <div class="max-w-[900px] mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-12">How It Works</h2>
+    <p class="text-slate-400">
+      Connect → Scan → Protect using AI-powered cybersecurity tools.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="py-20 bg-surface-dark border-t border-border-dark text-center">
+  <h2 class="text-4xl font-black mb-6">Ready to secure your future?</h2>
+  <button onclick="location.href='dashboard.html'"
+    class="px-8 py-4 bg-primary text-background-dark font-bold rounded-lg glow-cyan">
+    Get Started Free
+  </button>
+</section>
+
+</main>
+
+<footer class="py-12 text-center border-t border-border-dark">
+  <p class="text-slate-500 text-sm">© 2024 RakshaNetra. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
