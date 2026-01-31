@@ -15,7 +15,6 @@ protect users from common cyber threats using real-time analysis.
 - Frontend: HTML, Tailwind CSS, JavaScript
 - Backend: Python, Flask
 - APIs: REST
-- Database: JSON (can be extended)
 - Tools: Git, GitHub
 
 ## 🚀 How to Run
